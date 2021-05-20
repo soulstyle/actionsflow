@@ -1,7 +1,6 @@
 name: TestTask
 on:
-  webhook:
-    method: post
+  repository_dispatch:
 jobs:
   print:
     name: Print
