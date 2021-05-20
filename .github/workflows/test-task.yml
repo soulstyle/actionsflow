@@ -1,3 +1,4 @@
+name: TestTask
 on:
   webhook:
     method: post
