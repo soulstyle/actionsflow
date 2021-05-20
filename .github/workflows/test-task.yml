@@ -8,9 +8,9 @@ jobs:
     steps:
       - name: Print Outputs
         env:
-          method: ${{ on.repository_dispatch.outputs.method }}
-          body: ${{ toJson(on.repository_dispatch.outputs.body) }}
-          headers: ${{ toJson(on.repository_dispatch.outputs.headers) }}
+          method: ${{ on.repository_dispatch.client_payload.method }}
+          body: ${{ toJson(on.repository_dispatch.client_payload.body) }}
+          headers: ${{ toJson(on.repository_dispatch.client_payload.headers) }}
         run: |
           echo method: $method
           echo headers $headers
