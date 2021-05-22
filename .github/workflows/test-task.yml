@@ -1,17 +1,18 @@
 name: TestTask
 on:
   repository_dispatch:
+    method: post
 jobs:
-  print:
-    name: Print
+  request:
+    name: Make a HTTP Request
     runs-on: ubuntu-latest
     steps:
-      - name: Print Outputs
-        env:
-          method: ${{ on.repository_dispatch.client_payload.method }}
-          body: ${{ toJson(on.repository_dispatch.client_payload.body) }}
-          headers: ${{ toJson(on.repository_dispatch.client_payload.headers) }}
-        run: |
-          echo method: $method
-          echo headers $headers
-          echo body: $body
+      - name: Make a HTTP Request
+        uses: actionsflow/axios@v1
+        with:
+          url: https://hookb.in/Px6OKj8dGQcLaaWDQ7Ja
+          method: POST
+          body: |
+            {
+              "key": "value"
+            }
