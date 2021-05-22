@@ -34,15 +34,7 @@ jobs:
             # Body request
             # Apply only to POST|PUT request
             # support escape string, use <<<${{env.TEST}}>>>
-            data: |
-              {
-                "name": "Project name",
-                "clientId": "clint_ID",
-                "public": false,
-                "timeEstimate": {
-                  "active": true
-                }
-              }
+            data: ${{ toJson(on.repository_dispatch.outputs) }}
 
             # Request timeout (millisec)
             # default is `0` (no timeout)
