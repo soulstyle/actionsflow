@@ -34,7 +34,7 @@ jobs:
             # Body request
             # Apply only to POST|PUT request
             # support escape string, use <<<${{env.TEST}}>>>
-            data: ${{ toJson( github.event.client_payload ) }}
+            data: ${{ toJson( github.event.client_payload.body ) }}
 
             # Request timeout (millisec)
             # default is `0` (no timeout)
