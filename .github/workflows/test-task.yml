@@ -2,6 +2,7 @@ name: TestTask
 on:
   repository_dispatch:
     method: post
+    types: webhook-one
 jobs:
   request:
     name: Make a HTTP Request

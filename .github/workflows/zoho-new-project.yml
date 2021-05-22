@@ -2,6 +2,7 @@ name: ZohoProjectClockify
 on:
   repository_dispatch:
     method: post
+    types: webhook
 jobs:
   push_to_clockify:
     name: 'Push project to clockify'
